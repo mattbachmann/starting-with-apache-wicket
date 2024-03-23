@@ -71,7 +71,8 @@ public class HomePage extends BasePage {
 
   public HomePage() {
 
-    Label alertLabel = new Label("alertLabel", PropertyModel.of(this, "msg"));
+    Label testLabel = new Label("testLabel", "Number of Todos: " + mongoDBService.getAllItems().size());
+    add(testLabel);
 
     WebMarkupContainer alertBox = new WebMarkupContainer("alertBox") {
       boolean v = false;
