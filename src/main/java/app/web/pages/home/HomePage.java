@@ -104,13 +104,15 @@ public class HomePage extends BasePage {
     fp.setOutputMarkupId(true);
     add(fp);
 
+    // Create todosList as List<ListView>
     List<Todo> todos = mongoDBService.getAllItems();
     ListView<Todo> todosList = new ListView<>("todosList", todos) {
       @Override
       protected void populateItem(ListItem<Todo> item) {
-        item.add(new CheckBox("selected", new PropertyModel(item.getModel(), "selected")));
-        item.add(new Label("title", new PropertyModel(item.getModel(), "title")));
-        item.add(new Label("body", new PropertyModel(item.getModel(), "body")));
+        item.add(new CheckBox("selected", new PropertyModel<>(item.getModel(), "selected")));
+        item.add(new Label("title", new PropertyModel<>(item.getModel(), "title")));
+        item.add(new Label("body", new PropertyModel<>(item.getModel(), "body")));
+        // PropertyModel creates a dynamic model mapping
       }
     };
     todosList.setOutputMarkupPlaceholderTag(true);
