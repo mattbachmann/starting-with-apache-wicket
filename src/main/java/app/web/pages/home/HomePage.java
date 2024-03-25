@@ -221,7 +221,7 @@ public class HomePage extends BasePage {
 
         todoItem.setTitle("");
         todoItem.setBody("");
-        target.add(sectionForm);
+        target.add(sectionForm); // Refresh the form including the todosList
 
         showInfo(target, "Todo saved into database");
         //send(getPage(), Broadcast.DEPTH, new AlertMessageEvent(target, "Todo was saved ..."));
