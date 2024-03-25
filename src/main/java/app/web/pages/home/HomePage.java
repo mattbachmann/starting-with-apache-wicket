@@ -126,17 +126,18 @@ public class HomePage extends BasePage {
 
     WebMarkupContainer formNew = new WebMarkupContainer("formNew");
     formNew.setOutputMarkupPlaceholderTag(true);
-    formNew.setVisible(false);
+    formNew.setVisible(false); // Initially hide the div container and its content
 
+    // Create a button to toggle the visibility of the formNew as AjaxLink
     AjaxLink<Void> btn1 = new AjaxLink<>("addItemLink") {
       @Override
       public void onClick(AjaxRequestTarget target) {
-        formNew.setVisible(!formNew.isVisible());
+        formNew.setVisible(!formNew.isVisible()); // Toggle visibility
 
         target.add(formNew);
       }
     };
-    form.add(btn1);
+    form.add(btn1); // Add the button to the form
 
     AJAXDownload downloadPdf = new AJAXDownload() {
       @Override
@@ -199,6 +200,7 @@ public class HomePage extends BasePage {
     form.setDefaultModel(new CompoundPropertyModel<>(todoItem));
     sectionForm.add(form);
 
+    // Create new sub-form
     TextField<String> title = new TextField<>("title");
     TextField<String> body = new TextField<>("body");
     formNew.add(title);

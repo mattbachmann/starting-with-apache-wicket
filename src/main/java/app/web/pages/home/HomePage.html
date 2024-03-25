@@ -30,7 +30,7 @@
     <div wicket:id="feedbackPanel"></div>
 
     <div wicket:id="sectionForm" style="padding-top: 10px; padding-bottom: 10px;  ">
-        <form wicket:id='todo'>
+        <form wicket:id='todo'> <!-- form for adding and removing todos -->
             <div class="toolbar-top" style="padding-top: 20px">
                 <button wicket:id="addItemLink" type="button" class="btn btn-secondary btn-sm">Add new item</button>&#160;
                 <button wicket:id="remove" type="button" class="btn btn-secondary btn-sm">Remove selected items</button>&#160;
@@ -39,7 +39,7 @@
                 </button>
             </div>
 
-            <div wicket:id="formNew" style="padding: 5px; background-color: #eeeeee">
+            <div wicket:id="formNew" style="padding: 5px; background-color: #eeeeee"> <!-- toggle able container for adding new todo -->
                 <table cellpadding="5">
                     <tr>
                         <td>Title</td>
