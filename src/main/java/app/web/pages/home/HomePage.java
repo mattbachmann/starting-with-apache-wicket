@@ -208,7 +208,7 @@ public class HomePage extends BasePage {
 
     AjaxLink<Void> btnSave = new AjaxLink<Void>("save") {
       @Override
-      public void onClick(AjaxRequestTarget target) {
+      public void onClick(AjaxRequestTarget target) { // On click handler on save button
         Todo todo = new Todo();
         todo.setTitle(title.getValue());
         todo.setBody(todoItem.getBody());
