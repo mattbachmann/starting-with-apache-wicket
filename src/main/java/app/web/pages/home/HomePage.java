@@ -233,7 +233,7 @@ public class HomePage extends BasePage {
     formNew.add(btnSave);
 
 
-    AjaxLink<Void> btnRemove = new AjaxLink<Void>("remove") {
+    AjaxLink<Void> btnRemove = new AjaxLink<Void>("remove") {// Implement remove button
       @Override
       public void onClick(AjaxRequestTarget target) {
         List<Todo> todosToRemove = todos.stream()
@@ -249,7 +249,7 @@ public class HomePage extends BasePage {
       }
     };
     btnRemove.add(new AjaxFormSubmitBehavior(form, "click") {
-    });
+    }); // Add AjaxFormSubmitBehavior to send the form data to the server
     form.add(btnRemove);
 
     form.add(formNew, todosList);
