@@ -99,7 +99,7 @@ public class HomePage extends BasePage {
     alertBox.setOutputMarkupId(true);
     add(alertBox);
 
-    fp = new FeedbackPanel("feedbackPanel");
+    fp = new FeedbackPanel("feedbackPanel"); // Create a feedback panel to show messages
     fp.setOutputMarkupPlaceholderTag(true);
     fp.setOutputMarkupId(true);
     add(fp);
@@ -338,8 +338,8 @@ public class HomePage extends BasePage {
   }
 
   protected void showInfo(AjaxRequestTarget target, String msg) {
-    info(msg);
-    target.add(fp);
+    info(msg); // Set the message
+    target.add(fp); // Make feedback panel visible by adding it to the target
   }
 
   @Data
