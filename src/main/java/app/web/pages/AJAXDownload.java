@@ -6,6 +6,9 @@ import org.apache.wicket.request.handler.resource.ResourceStreamRequestHandler;
 import org.apache.wicket.request.resource.ContentDisposition;
 import org.apache.wicket.util.resource.IResourceStream;
 
+/**
+ * AJAXDownload is a class that allows for downloading files via AJAX.
+ */
 public abstract class AJAXDownload extends AbstractAjaxBehavior {
   public AJAXDownload() {
 

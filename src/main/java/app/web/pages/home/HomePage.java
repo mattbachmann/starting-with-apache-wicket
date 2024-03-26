@@ -172,7 +172,7 @@ public class HomePage extends BasePage {
       }
 
       @Override
-      protected IResourceStream getResourceStream() {
+      protected IResourceStream getResourceStream() { // Extend Wickets AbstractResourceStreamWriter
         return new AbstractResourceStreamWriter() {
           @Override
           public void write(OutputStream output) throws IOException {
