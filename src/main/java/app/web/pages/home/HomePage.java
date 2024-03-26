@@ -71,9 +71,6 @@ public class HomePage extends BasePage {
 
   public HomePage() {
 
-    Label testLabel = new Label("testLabel", "Number of Todos: " + mongoDBService.getAllItems().size());
-    add(testLabel);
-
     WebMarkupContainer alertBox = new WebMarkupContainer("alertBox") {
       boolean v = false;
 
@@ -106,6 +103,7 @@ public class HomePage extends BasePage {
 
     // Create todosList as List<ListView>
     List<Todo> todos = mongoDBService.getAllItems();
+
     ListView<Todo> todosList = new ListView<>("todosList", todos) {
       @Override
       protected void populateItem(ListItem<Todo> item) {
@@ -123,6 +121,10 @@ public class HomePage extends BasePage {
     sectionForm.setOutputMarkupPlaceholderTag(true);
     sectionForm.setVisible(true);
     Form<Void> form = new Form<>("todo");
+
+    Label testLabel = new Label("testLabel", new PropertyModel<>(todos, "size"));
+    testLabel.setOutputMarkupId(true);
+    sectionForm.add(testLabel);
 
     WebMarkupContainer formNew = new WebMarkupContainer("formNew");
     formNew.setOutputMarkupPlaceholderTag(true);
@@ -217,6 +219,8 @@ public class HomePage extends BasePage {
         todos.clear();
         todos.addAll(mongoDBService.getAllItems());
 
+        downloadExcelBtn.setEnabled(true);
+
         formNew.setVisible(false);
 
         todoItem.setTitle("");
@@ -243,6 +247,10 @@ public class HomePage extends BasePage {
 
         todos.clear();
         todos.addAll(mongoDBService.getAllItems());
+
+        if (todos.isEmpty()) {
+          downloadExcelBtn.setEnabled(false);
+        }
 
         showInfo(target, "Selected items removed ...");
         target.add(sectionForm);

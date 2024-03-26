@@ -20,7 +20,6 @@
            color: white;
         }
     </style>
-    <h2 wicket:id="testLabel">This text will be replaced</h2>
 
     <div wicket:id="alertBox" class="alert alert-success alert-dismissible fade show">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -30,6 +29,7 @@
     <div wicket:id="feedbackPanel"></div> <!-- feedback panel for showing messages -->
 
     <div wicket:id="sectionForm" style="padding-top: 10px; padding-bottom: 10px;  ">
+        <h2>Number of TODOs: <span wicket:id="testLabel">Text will be replaced</span></h2>
         <form wicket:id='todo'> <!-- form for adding and removing todos -->
             <div class="toolbar-top" style="padding-top: 20px">
                 <button wicket:id="addItemLink" type="button" class="btn btn-secondary btn-sm">Add new item</button>&#160;
